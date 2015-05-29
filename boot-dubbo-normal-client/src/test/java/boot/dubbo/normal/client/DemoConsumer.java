@@ -16,6 +16,7 @@
 package boot.dubbo.normal.client;
 
 import java.util.List;
+import java.util.Random;
 
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -35,9 +36,13 @@ public class DemoConsumer {
 		UserService userService = ctx.getBean("userService", UserService.class);
 		while (true) {
 			List<User> users = userService.findAll();
-			System.out.println("返回结果：" + "size:" + users.size() );
+			User u = new User();
+			Random r = new Random();
+			u.setName("gsadg" + r.nextInt());
+			String v = userService.create(u);
+			System.out.println("返回结果：" + v + "size:" + users.size() );
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(100);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

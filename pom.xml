@@ -61,5 +61,7 @@
     <module>boot-dubbo-web</module>
     <module>boot-dubbo-normal-client</module>
     <module>boot-dubbo-simple</module>
-  </modules>
+    <module>boot-dubbo-infrastructure</module>
+    <module>boot-dubbo-simple-client</module>
+	</modules>
 </project>
